@@ -20,7 +20,7 @@ const FavoriteRestoArray = {
 			return;
 		}
 
-		// pastikan id ini belum ada dalam daftar favoriteMovies
+		// pastikan id ini belum ada dalam daftar favorite restaurant
 		if (this.get(resto.id)) {
 			return;
 		}
