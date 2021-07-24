@@ -43,7 +43,7 @@ const itActsAsFavoriteRestoModel = (favoriteResto) => {
 			]);
 	});
 
-	it('should handle request to remove a movie even though the movie has not been added', async () => {
+	it('should handle request to remove a restaurant even though the restaurant has not been added', async () => {
 		favoriteResto.put({ id: 1 });
 		favoriteResto.put({ id: 2 });
 		favoriteResto.put({ id: 3 });
@@ -57,21 +57,6 @@ const itActsAsFavoriteRestoModel = (favoriteResto) => {
 				{ id: 3 },
 			]);
 	});
-
-	/*
-	it('should be able to search for restos', async () => {
-		favoriteResto.put({ id: 1, title: 'resto a' });
-		favoriteResto.put({ id: 2, title: 'resto b' });
-		favoriteResto.put({ id: 3, title: 'resto abc' });
-		favoriteResto.put({ id: 4, title: 'ini mah resto abcd' });
-
-		expect(await favoriteResto.searchRestos('resto a')).toEqual([
-			{ id: 1, title: 'resto a' },
-			{ id: 3, title: 'resto abc' },
-			{ id: 4, title: 'ini mah resto abcd' },
-		]);
-	});
-	*/
 };
 
 export { itActsAsFavoriteRestoModel };

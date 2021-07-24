@@ -10,10 +10,10 @@ const createRestoItemTemplate = (item) => {
 						</div>
 						<div class="list-item-thumbnail">
 							<picture>
-								<source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL_S}${item.pictureId}">
+								<source media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL_S}${item.pictureId}">
 								<img class="card-image lazyload" 
-									data-srcset="${CONFIG.BASE_IMAGE_URL_M}${item.pictureId}"
-									alt="${item.name}" crossorigin="anonymous"  srcset=""/>
+									data-src="${CONFIG.BASE_IMAGE_URL_M}${item.pictureId}"
+									alt="${item.name}" crossorigin="anonymous"/>
 							</picture>
 						</div>
 						<div class="list-item-content">
