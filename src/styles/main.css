@@ -155,9 +155,9 @@ nav a:hover {
     min-height: 400px;
     width: 100%;
     text-align: center;
-    background-image: url("../public/images/heros/hero-image_2.jpg");
+    background-image: url("/images/heros/hero-image_2-large.jpg");
     background-position: center;
-    background-color: green;
+    background-color: var(--primary-color);
     content-visibility: auto;
 	/*padding-top: 70px;*/
 }

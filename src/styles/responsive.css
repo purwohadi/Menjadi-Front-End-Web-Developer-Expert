@@ -1,8 +1,21 @@
-@media screen and (min-width: 550px) {
-    .list {
-        grid-template-columns: 1fr 1fr;
-    }
+@media only screen and (max-width: 992px) {
+	.hero {
+		background: url('/images/heros/hero-image_2-large.jpg');
+		min-height: 500px;
+		background-size: cover;
+		background-position: center;
+	}
 }
+
+@media only screen and (max-width: 600px) {
+	.hero {
+		min-height: 500px;
+		background: url('/images/heros/hero-image_2-small.jpg');
+		background-size: cover;
+		background-position: center;
+	}	  
+}
+
 
 @media screen and (min-width: 650px) {
 	
