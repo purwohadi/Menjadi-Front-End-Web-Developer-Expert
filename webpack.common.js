@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const ImageminMozjpeg = require('imagemin-mozjpeg');
@@ -26,7 +26,7 @@ module.exports = {
             		loader: 'style-loader',
             	},
             	{
-            		loader: 'css-loader',
+            		loader: 'css-loader?url=false',
             	},
             ],
         },
@@ -42,7 +42,7 @@ module.exports = {
         ],
 	},
 	plugins: [
-		new CleanWebpackPlugin(),
+		// new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 		  template: path.resolve(__dirname, 'src/templates/index.html'),
 		  filename: 'index.html',
@@ -50,8 +50,8 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{
-					from: path.resolve(__dirname, 'src/public/'),
-					to: path.resolve(__dirname, 'dist/'),
+					from: path.resolve(__dirname, 'src/public/images'),
+					to: path.resolve(__dirname, 'dist/images/'),
 				},
 			],
 		}),

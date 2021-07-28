@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "build-dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js && node sharp.js",
+    "build-dev": "webpack --config webpack.dev.js && node sharp.js",
     "test": "karma start",
     "lint": "eslint ./src --fix",
     "e2e": "codeceptjs run --steps",
+    "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json",
     "build-image": "node sharp.js"
   },
   "keywords": [],
