@@ -7,6 +7,8 @@ const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const path = require('path');
 
@@ -73,6 +75,59 @@ module.exports = {
 				statsOptions: { source: false },
 			},
 		),
+		new WebpackPwaManifest({
+			name: 'Restaurant Apps Starter Project',
+			short_name: 'Purwo Restaurant',
+			description: 'Purwo Restaurant Apps Starter Project',
+			start_url: '/index.html',
+			display: 'standalone',
+			background_color: '#ffffff',
+			theme_color: '#d84315',
+			icons: [
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-48x48.png'),
+					sizes: '48x48',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-72x72.png'),
+					sizes: '72x72',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-96x96.png'),
+					sizes: '96x96',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-120x120.png'),
+					sizes: '120x120',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-144x144.png'),
+					sizes: '144x144',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-192x192.png'),
+					sizes: '192x192',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+				{
+					src: path.resolve(__dirname, 'src/public/images/icons/restaurant-icon-512x512.png'),
+					sizes: '512x512',
+					type: 'image/png',
+					purpose: 'any maskable',
+				},
+			],
+		}),
 	],
 	optimization: {
 		splitChunks: {
